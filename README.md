@@ -1,31 +1,60 @@
-# Rawleaf static store
+# Rawleaf Ecommerce
 
-## Preview on your computer
-1. Extract the ZIP into a folder.
-2. Double-click `index.html` to open it in Chrome, Edge or Firefox.
-3. Keep `css`, `js` and `images` next to the HTML files. No installation, npm or build step is needed.
-4. Add a product, open Bag, change quantities, refresh, and complete the checkout form. The final button opens WhatsApp; the customer must send the draft there.
+A mobile-first wellness store for Rawleaf, designed in black, ivory and muted gold. Built with plain HTML, CSS and JavaScript—no frameworks, installation or build step.
 
-Google Fonts need internet access; system fonts work offline. WhatsApp and UPI apps also need an internet connection/app support. Browser privacy settings can restrict localStorage. For reliable cart storage across pages, test the final hosted site too; local-file storage behavior differs between browsers.
+## What it includes
 
-## Edit the store
-- Products and prices: `js/products.js`. Replace `images/product-1.jpg` through `product-7.jpg` with real images, and update image descriptions.
-- Colours, fonts and responsive layout: `css/style.css`.
-- UPI and WhatsApp configuration: constants near the top of `js/main.js`. Contact numbers also appear in HTML pages.
-- Homepage copy and static page content: the corresponding `.html` file.
-- Offers: set `OFFER_TEXT` and add approved entries to `DISCOUNTS` in products.js. Example: `{ code: 'YOURCODE', percent: 5 }`. No code is enabled by default.
-- Reviews: add genuine entries to `REVIEWS` with `name` and `text`.
-- Bundles: add entries to `BUNDLES` with `id`, `name`, `description`, `productIds`. Bundles use the sum of individual prices; add a real discount code separately if appropriate.
+- Seven products with prices in Indian Rupees.
+- Shop filters, search and price sorting.
+- Product and wellness concern pages.
+- A cart with quantity controls and browser storage.
+- Checkout with COD or UPI and an order draft sent through WhatsApp.
+- About and contact pages, FAQs and a floating WhatsApp button.
 
-## Before accepting live orders
-Replace product photo placeholders. Add verified ingredients and label directions. Confirm product spelling, approved claims, shipping charges, delivery coverage, return/COD terms and real offers. The prices currently represent product totals only; shipping is confirmed on WhatsApp.
+## Preview the website
 
-The QR panel is an explicitly labelled, non-scannable placeholder. To use a real QR, obtain the merchant payment QR for `7003185197-2@okbizaxis`, save it in images, and replace the `.qr-placeholder` element in main.js with an `<img>` using descriptive alt text. Copy UPI ID and the UPI app link work without that image. Confirm the final total before payment. This site cannot automatically verify UPI payments or store orders in a central database.
+Download or clone this repository, then double-click `index.html`. Keep all the folders beside the HTML files. Google Fonts, WhatsApp and UPI app links need internet access.
 
-## Static hosting
-Upload all extracted files to the root of your GitHub repository, then enable GitHub Pages or connect the repository to your static host. No build command is needed. Connect www.rawleafs.in following the host's domain instructions. Update canonical and Open Graph URLs if using a different domain. No deployment has been performed as part of this delivery.
+Cart storage depends on your browser. For reliable storage across pages, also test the hosted website.
 
-Every HTML page has a unique title, description, canonical URL and Open Graph title/description. Product and concern pages update their metadata in the browser from the URL parameters. Social crawlers often do not run JavaScript, so product links may show the generic product-page preview. Product-specific WhatsApp previews require separate static HTML files per product (or server rendering). No social image is supplied while real product photos are pending.
+## Project files
 
-## Included files
-index.html, shop.html, product.html, cart.html, about.html, contact.html, concern.html, css/style.css, js/main.js, js/products.js, images/, PROJECT_BRIEF.md and this guide. Checkout is part of cart.html; concern.html provides individual concern views using a URL parameter.
+| File or folder | Purpose |
+|---|---|
+| `index.html` | Home page |
+| `shop.html` | All products and filters |
+| `product.html?id=1` | Product details selected by ID |
+| `concern.html?category=Sleep` | Products for a wellness concern |
+| `cart.html` | Cart and checkout |
+| `about.html`, `contact.html` | Brand and contact information |
+| `css/style.css` | Colours, fonts and layouts |
+| `js/products.js` | Products, prices, offers, reviews and bundles |
+| `js/main.js` | Cart, filters and WhatsApp checkout |
+| `images/` | Product images and favicon |
+| `PROJECT_BRIEF.md` | Approved discovery brief |
+
+## Make changes
+
+Edit `js/products.js` to change products, prices and image descriptions. All seven supplied primary photos are installed. Beta Revive has three secondary gallery images. Edit `css/style.css` to change the design.
+
+Offers, reviews and bundles are empty until real content is supplied. An approved discount can be added to `DISCOUNTS` with a `code` and `percent`. Bundles use the sum of their individual product prices.
+
+## Before taking live orders
+
+Supply verified ingredients and directions, approved claims, shipping charges, delivery coverage and return/COD terms. Confirm product spellings and prices.
+
+The UPI ID is configured. The QR area is a labelled, non-scannable placeholder; replace it with the merchant's real QR image. UPI receipt is checked manually. WhatsApp opens an order draft that the customer must send; the website does not automatically confirm or centrally store orders.
+
+Product totals exclude shipping, which Rawleaf confirms before the order is finalised. Visual testing at 375px is still pending.
+
+## Publish as a static website
+
+This project needs no build command. Publish the repository's root folder with GitHub Pages or another static host. For GitHub Pages, choose the `main` branch and `/ (root)` folder in the repository's Pages settings.
+
+The metadata uses `https://www.rawleafs.in`. Update canonical and Open Graph URLs if using a different domain. Product and concern metadata changes through JavaScript; some social sharing crawlers will show the generic page preview.
+
+## Contact
+
+WhatsApp / call: +91 9038152100
+
+Email: rawleafcare@gmail.com

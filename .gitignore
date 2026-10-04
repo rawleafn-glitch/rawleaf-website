@@ -1,0 +1,36 @@
+# Private local settings (never needed by this static website)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor settings and temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# Download bundles and archives; commit the original website files instead
+*.zip
+*.tar
+*.tar.gz
+
+# Optional local tooling; the site itself has no dependencies or build step
+node_modules/
+__pycache__/
+.sites-runtime/
+
+# Local workspace configuration
+.codex/
+
+# Original user uploads and inspection files
+upload/
